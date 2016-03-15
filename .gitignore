@@ -1,0 +1,12 @@
+/*
+!/.gitignore
+!/.gitattributes
+!/CT_ROOT/
+!/dev/
+!/ext/
+!/publish/
+!/src/
+!/build.xml
+!/CHANGELOG.md
+!/README.md
+!/composer.json
