@@ -23,3 +23,7 @@ Provides extended newsletter functionality for Contao Open Source CMS.
 This extension is dependent on the following extensions:
 
 - newsletter (Contao core)
+
+## Screenshots
+
+![Module: Subscribe extended](screenshot_subscribe-extended.png)
