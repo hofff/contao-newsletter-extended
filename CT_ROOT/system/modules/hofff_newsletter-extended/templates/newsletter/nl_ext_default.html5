@@ -1,0 +1,57 @@
+
+<!-- indexer::stop -->
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+  <?php if ($this->headline): ?>
+    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+  <?php endif; ?>
+
+  <form<?php if ($this->action): ?> action="<?php echo $this->action; ?>"<?php endif; ?> id="<?php echo $this->formId; ?>" method="post">
+    <div class="formbody">
+      <input type="hidden" name="FORM_SUBMIT" value="<?php echo $this->formId; ?>">
+      <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
+
+      <?php if ($this->message): ?>
+        <p class="<?php echo $this->mclass; ?>"><?php echo $this->message; ?></p>
+      <?php endif; ?>
+
+      <?php if (!$this->showChannels): ?>
+        <?php foreach ($this->channels as $id=>$title): ?>
+          <input type="hidden" name="channels[]" value="<?php echo $id; ?>">
+        <?php endforeach; ?>
+      <?php endif; ?>
+
+      <label for="ctrl_email_<?php echo $this->id; ?>" class="invisible"><?php echo $this->emailLabel; ?></label>
+      <input type="text" name="email" id="ctrl_email_<?php echo $this->id; ?>" class="text" value="<?php echo $this->email; ?>" placeholder="<?php echo $this->emailLabel; ?>">
+
+      <label for="ctrl_salutation_<?php echo $this->id; ?>" class="invisible"><?php echo $this->salutationLabel; ?></label>
+      <select name="salutation" id="ctrl_salutation_<?php echo $this->id; ?>" class="select">
+        <optgroup label="<?php echo $this->salutationLabel; ?>">
+          <option value="">-</option>
+          <option value="female"><?php echo $this->salutationFemaleOption; ?></option>
+          <option value="male"><?php echo $this->salutationMaleOption; ?></option>
+        </optgroup>
+      </select>
+
+      <label for="ctrl_firstname_<?php echo $this->id; ?>" class="invisible"><?php echo $this->firstnameLabel; ?></label>
+      <input type="text" name="firstname" id="ctrl_firstname_<?php echo $this->id; ?>" class="text" value="<?php echo $this->firstname; ?>" placeholder="<?php echo $this->firstnameLabel; ?>">
+
+      <label for="ctrl_lastname_<?php echo $this->id; ?>" class="invisible"><?php echo $this->lastnameLabel; ?></label>
+      <input type="text" name="lastname" id="ctrl_lastname_<?php echo $this->id; ?>" class="text" value="<?php echo $this->lastname; ?>" placeholder="<?php echo $this->lastnameLabel; ?>">
+
+      <?php if ($this->showChannels): ?>
+        <label for="ctrl_channels_<?php echo $this->id; ?>" class="invisible"><?php echo $this->channelsLabel; ?></label>
+        <div id="ctrl_channels_<?php echo $this->id; ?>" class="checkbox_container">
+          <?php foreach ($this->channels as $id=>$title): ?>
+            <span><input type="checkbox" name="channels[]" id="opt_<?php echo $this->id; ?>_<?php echo $id; ?>" value="<?php echo $id; ?>" class="checkbox"> <label for="opt_<?php echo $this->id; ?>_<?php echo $id; ?>"><?php echo $title; ?></label></span>
+          <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
+
+      <input type="submit" name="submit" class="submit" value="<?php echo $this->submit; ?>">
+
+    </div>
+  </form>
+
+</div>
+<!-- indexer::continue -->
