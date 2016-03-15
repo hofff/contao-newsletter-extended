@@ -22,4 +22,4 @@ Provides extended newsletter functionality for Contao Open Source CMS.
 
 This extension is dependent on the following extensions:
 
-- [newsletter] (Contao core)
+- newsletter (Contao core)
