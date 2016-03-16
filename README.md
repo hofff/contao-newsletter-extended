@@ -11,7 +11,7 @@ Provides extended newsletter functionality for Contao Open Source CMS.
 
 1. Offers a special subscribe module (`Subscribe extended`)
     - with optional entering of salutation, first & last name
-    - with defining a custom page for activation confirmation of the
+    - with defining a custom page for activation confirmation
 
 ## Compatibility
 
