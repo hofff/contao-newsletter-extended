@@ -6,7 +6,7 @@
     <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
   <?php endif; ?>
 
-  <form action="<?php echo $this->action; ?>" id="<?php echo $this->formId; ?>" method="post">
+  <form<?php if ($this->action): ?> action="<?php echo $this->action; ?>"<?php endif; ?> id="<?php echo $this->formId; ?>" method="post">
     <div class="formbody">
       <input type="hidden" name="FORM_SUBMIT" value="<?php echo $this->formId; ?>" />
       <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}" />
@@ -26,9 +26,11 @@
 
       <label for="ctrl_salutation_<?php echo $this->id; ?>" class="invisible"><?php echo $this->salutationLabel; ?></label>
       <select name="salutation" id="ctrl_salutation_<?php echo $this->id; ?>" class="select">
-        <option value="">-</option>
-        <option value="female"><?php echo $this->salutationFemaleOption; ?></option>
-        <option value="male"><?php echo $this->salutationMaleOption; ?></option>
+        <optgroup label="<?php echo $this->salutationLabel; ?>">
+          <option value="">-</option>
+          <option value="female"><?php echo $this->salutationFemaleOption; ?></option>
+          <option value="male"><?php echo $this->salutationMaleOption; ?></option>
+        </optgroup>
       </select>
 
       <label for="ctrl_firstname_<?php echo $this->id; ?>" class="invisible"><?php echo $this->firstnameLabel; ?></label>
