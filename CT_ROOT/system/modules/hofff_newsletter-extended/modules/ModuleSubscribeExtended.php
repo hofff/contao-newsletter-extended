@@ -5,7 +5,9 @@
  *
  * Copyright (c) 2005-2016 Leo Feyer
  *
- * @license LGPL-3.0+
+ * @package Hofff_newsletter-extended
+ * @link    https://contao.org
+ * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
 namespace Hofff\Contao\NewsletterExtended;
@@ -69,6 +71,20 @@ class ModuleSubscribeExtended extends \Contao\ModuleSubscribe
 		$this->Template->lastnameLabel = $GLOBALS['TL_LANG']['tl_newsletter_recipients']['lastname'][0];
 	}
 
+
+	/**
+	 * Activate a recipient
+	 */
+	protected function activateRecipient()
+	{
+		parent::activateRecipient();
+		
+		// Redirect to the nlExtConfirmPage page
+		if ($this->nlExtConfirmPage && ($objTarget = $this->objModel->getRelated('nlExtConfirmPage')) !== null)
+		{
+			$this->redirect($this->generateFrontendUrl($objTarget->row()));
+		}
+	}
 
 	/**
 	 * Add a new recipient
