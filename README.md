@@ -9,8 +9,9 @@ Provides extended newsletter functionality for Contao Open Source CMS.
 
 ## Features
 
-1. Subscribe to one or more Contao newsletter channels incl. optional entering of salutation, first & last name via special front end module `Subscribe extended` (uses an extended tempate `nl_ext_default`).
-2. Define a separate page for activation confirmation of the subscription.
+1. Offers a special subscribe module (`Subscribe extended`)
+    - with optional entering of salutation, first & last name
+    - with defining a custom page for activation confirmation of the
 
 ## Compatibility
 
@@ -26,4 +27,5 @@ This extension is dependent on the following extensions:
 
 ## Screenshots
 
-![Module: Subscribe extended](screenshot_subscribe-extended.png)
+![Module 'Subscribe extended' in front end](screenshot_subscribe-extended-fe.png)
+![Module: 'Subscribe extended' in back end](screenshot_subscribe-extended-be.png)
