@@ -19,6 +19,13 @@ Provides extended newsletter functionality for Contao Open Source CMS.
 - max. Contao version: <  3.6.0
 
 
+## Installation
+
+Install the extension via composer: [hofff/contao-newsletter-extended](https://packagist.org/packages/hofff/contao-newsletter-extended).
+
+If you prefer to install it manually, download the latest release here: https://github.com/hofff/contao-newsletter-extended/releases
+
+
 ## Dependency
 
 This extension is dependent on the following extensions:
